@@ -29,6 +29,7 @@ public class JetsApp {
 		hanger.addJet(j3);
 		hanger.addJet(j4);
 		hanger.addJet(j5);
+		Jet[] starportCopy = hanger.getHanger();
 		
 		System.out.println("Welcome to Mos Eisley Starport, Please select an option:");
 		displayMenu();
@@ -50,7 +51,7 @@ public class JetsApp {
 				
 			}
 			else if (choice == 2) {
-				
+				Jet[] starportCopy = hanger.getHanger();
 			}
 			else if (choice == 3) {
 				Jet jet2 = null;
@@ -91,7 +92,21 @@ public class JetsApp {
 				sc.nextLine();
 			}
 			else if (choice == 5) {
+				Jet[] starportCopy3 = hanger.getHanger();
 				
+				for (Jet jet : starportCopy3) {
+					if (jet instanceof CargoJet) {
+						System.out.println(jet.getModel() + " is going to try a smuggler's run!");
+						((CargoJet) jet).smugglersRun();
+					}
+					else {
+						continue;
+					}
+				}
+				System.out.println("What would you like to do next?");
+				displayMenu();
+				choice = sc.nextInt();
+				sc.nextLine();
 			}
 			else if (choice == 6) {
 				
@@ -100,7 +115,7 @@ public class JetsApp {
 				System.out.println("What kind of vessel are you looking to land?\n1.Trade Vessel\n2.Fighter\n3.Basic Boring Jet...");
 				int planeType = sc.nextInt();
 				sc.nextLine();
-				if (planeType == 1) {
+				if (planeType == 1) { //adding jets to the hanger
 					System.out.println("What is your Starship's name?");
 					String name = sc.nextLine();
 					System.out.println("What is the speed?");
@@ -122,7 +137,7 @@ public class JetsApp {
 					
 					
 				}
-				else if (planeType == 2) {
+				else if (planeType == 2) {//adding jets to the hanger
 					System.out.println("What is your Starship's name?");
 					String name = sc.nextLine();
 					System.out.println("What is the speed?");
@@ -142,7 +157,7 @@ public class JetsApp {
 					choice = sc.nextInt();
 					sc.nextLine();
 				}
-				else if (planeType == 3) {
+				else if (planeType == 3) {//adding jets to the hanger
 					System.out.println("What is your Starship's name?");
 					String name = sc.nextLine();
 					System.out.println("What is the speed?");

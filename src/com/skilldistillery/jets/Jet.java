@@ -15,7 +15,7 @@ public abstract class Jet {
 	}
 	
 	public void fly() {
-		
+		System.out.println("The starship:" + model + ", Speed:" + speed + ", Galactic Flight Distance=" + range + ", Republic Credits=" + price + ". Can fly a distance of: " + range/speed);
 	}
 
 	public String getModel() {
@@ -52,7 +52,7 @@ public abstract class Jet {
 
 	@Override
 	public String toString() {
-		return "Starship:" + model + ", speed:" + speed + ", Galactic Distance=" + range + ", Republic Credits=" + price;
+		return "Starship:" + model + ", Speed:" + speed + ", Galactic Flight Distance=" + range + ", Republic Credits=" + price;
 	}
 	
 }
