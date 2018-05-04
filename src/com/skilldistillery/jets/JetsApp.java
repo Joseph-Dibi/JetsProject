@@ -33,6 +33,7 @@ public class JetsApp {
 		System.out.println("Welcome to Mos Eisley Starport, Please select an option:");
 		displayMenu();
 		int choice = sc.nextInt();
+		sc.nextLine();
 		do {
 			if (choice == 1) {
 				Jet[] starportCopy = hanger.getHanger();
@@ -45,25 +46,49 @@ public class JetsApp {
 				System.out.println("What would you like to do next?");
 				displayMenu();
 				choice = sc.nextInt();
+				sc.nextLine();
 				
 			}
 			else if (choice == 2) {
 				
 			}
 			else if (choice == 3) {
+				Jet jet2 = null;
 				Jet[] starportCopy1 = hanger.getHanger();
+				double fastestJet = 0;
 				for (int i = 0; i < starportCopy1.length; i++) {
 					Jet jet = starportCopy1[i];
-					if (jet.getSpeed() > fastestJet.getSpeed()) {
-						fastestJet = jet;
+					if (jet != null && jet.getSpeed() > fastestJet) {
+						jet2 = jet;
+						fastestJet = jet.getSpeed();
 					}
 					
 				} 
 				
-				System.out.println(fastestJet);
+				System.out.println(jet2);
+				System.out.println("What would you like to do next?");
+				displayMenu();
+				choice = sc.nextInt();
+				sc.nextLine();
 			}
 			else if (choice == 4) {
+				Jet jet2 = null;
+				Jet[] starportCopy1 = hanger.getHanger();
+				int mostFuel = 0;
+				for (int i = 0; i < starportCopy1.length; i++) {
+					Jet jet = starportCopy1[i];
+					if (jet != null && jet.getRange() > mostFuel) {
+						jet2 = jet;
+						mostFuel = jet.getRange();
+					}
+					
+				} 
 				
+				System.out.println(jet2);
+				System.out.println("What would you like to do next?");
+				displayMenu();
+				choice = sc.nextInt();
+				sc.nextLine();
 			}
 			else if (choice == 5) {
 				
