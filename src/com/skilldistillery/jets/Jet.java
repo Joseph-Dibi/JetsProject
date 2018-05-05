@@ -15,7 +15,7 @@ public abstract class Jet {
 	}
 	
 	public void fly() {
-		System.out.println("The starship:" + model + ", Speed:" + speed + ", Galactic Flight Distance=" + range + ", Republic Credits=" + price + ". Can fly a distance of: " + range/speed);
+		System.out.println("The starship:" + model + ", Speed:" + speed + ", Galactic Flight Distance=" + range + ", Republic Credits=" + price + ". Can fly a distance of: " + range/speed + " Intergalactic Miles");
 	}
 
 	public String getModel() {
