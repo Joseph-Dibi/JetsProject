@@ -37,7 +37,6 @@ public class JetsApp {
 		sc.nextLine();
 		do {
 			if (choice == 1) {
-				Jet[] starportCopy = hanger.getHanger();
 				for (Jet jet : starportCopy) {
 					if (jet == null) {
 						continue;
@@ -51,14 +50,22 @@ public class JetsApp {
 				
 			}
 			else if (choice == 2) {
-				Jet[] starportCopy = hanger.getHanger();
+				for (Jet jet : starportCopy) {
+					if (jet == null) {
+						continue;
+					}
+					jet.fly();
+				}
+				System.out.println("What would you like to do next?");
+				displayMenu();
+				choice = sc.nextInt();
+				sc.nextLine();
 			}
 			else if (choice == 3) {
 				Jet jet2 = null;
-				Jet[] starportCopy1 = hanger.getHanger();
 				double fastestJet = 0;
-				for (int i = 0; i < starportCopy1.length; i++) {
-					Jet jet = starportCopy1[i];
+				for (int i = 0; i < starportCopy.length; i++) {
+					Jet jet = starportCopy[i];
 					if (jet != null && jet.getSpeed() > fastestJet) {
 						jet2 = jet;
 						fastestJet = jet.getSpeed();
@@ -74,10 +81,9 @@ public class JetsApp {
 			}
 			else if (choice == 4) {
 				Jet jet2 = null;
-				Jet[] starportCopy1 = hanger.getHanger();
 				int mostFuel = 0;
-				for (int i = 0; i < starportCopy1.length; i++) {
-					Jet jet = starportCopy1[i];
+				for (int i = 0; i < starportCopy.length; i++) {
+					Jet jet = starportCopy[i];
 					if (jet != null && jet.getRange() > mostFuel) {
 						jet2 = jet;
 						mostFuel = jet.getRange();
@@ -92,9 +98,8 @@ public class JetsApp {
 				sc.nextLine();
 			}
 			else if (choice == 5) {
-				Jet[] starportCopy3 = hanger.getHanger();
 				
-				for (Jet jet : starportCopy3) {
+				for (Jet jet : starportCopy) {
 					if (jet instanceof CargoJet) {
 						System.out.println(jet.getModel() + " is going to try a smuggler's run!");
 						((CargoJet) jet).smugglersRun();
