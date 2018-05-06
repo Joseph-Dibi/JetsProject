@@ -6,6 +6,7 @@ public abstract class Jet {
 	private int range;
 	private long price;
 	
+	
 	public Jet(String model, double speed, int range, long price) {
 		super();
 		this.model = model;
@@ -15,8 +16,8 @@ public abstract class Jet {
 	}
 	
 	public void fly() {
-		System.out.println("The starship: " + model + ", Speed:" + speed + ", Galactic Flight Distance=" + range + ", Republic Credits=" + price + ". Can fly a distance of: " + range/speed + " Intergalactic Miles");
-	}
+		System.out.println("The starship: " + model + ", Atmospheric Speed:" + speed + ", Galactic Flight Distance=" + range + ", Republic Credits=" + price + ". Can fly a distance of: " + range/speed + " Intergalactic Miles. " + "HyperSpace Speed: " + speed*.001303);
+	} //mach = miles per hour × 0.001303
 
 	public String getModel() {
 		return model;

@@ -9,7 +9,7 @@ public class FighterJets extends Jet implements DogFight {
 	}
 
 	public void loadMissles() {
-		System.out.println("Loading missles and preparing for dogfight!");
+		System.out.println("Loading missiles and preparing for dogfight!");
 	}
 }
 					
