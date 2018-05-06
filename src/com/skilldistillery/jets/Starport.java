@@ -3,7 +3,7 @@ package com.skilldistillery.jets;
 
 public class Starport {
 	
-	private Jet[] hanger = new Jet[100];
+	private Jet[] hanger = new Jet[80];
 	
 	public void addJet(Jet jet) {
 		boolean fullHanger = false;

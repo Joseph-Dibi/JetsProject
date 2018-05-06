@@ -189,7 +189,20 @@ public class JetsApp {
 					choice = sc.nextInt();
 					sc.nextLine();
 				}
-			} else {
+			} else if (choice == 9) {
+				System.out.println("Which Jet would you like to fly?");
+				int individJet = sc.nextInt();
+				sc.nextLine();
+				for (int i = 0; i < starportCopy.length; i++) {
+					Jet jet = starportCopy[i];
+					if (jet == null) {
+						continue;
+					}else if (i == individJet) {
+						jet.fly();
+					}
+				}
+			}
+			else {
 				System.out.println("That's not an option you fool! Pick again.");
 				choice = sc.nextInt();
 			}
@@ -203,13 +216,20 @@ public class JetsApp {
 	public static void displayMenu() {
 		System.out.println(
 				"1. List fleet\n" + "2. Fly all jets\n" + "3. View fastest jet\n" + "4. View jet with longest range\n"
-						+ "5. Load all Cargo Jets\n" + "6. Dogfight!\n" + "7. Add a jet to Fleet\n" + "8. Quit");
+						+ "5. Load all Cargo Jets\n" + "6. Dogfight!\n" + "7. Add a jet to Fleet\n" + "8. Quit\n" + "9. Fly one Jet.");
 	}
 
 	public static void dogFight(Starport starportCopy) {
 		Jet[] battle = starportCopy.getHanger();
+		int nullCounter = 0;
+		for (Jet jet : battle) {
+			if (jet == null) {
+				nullCounter++;
+			}
+		}
+		System.out.println(nullCounter);
 		int planesLeft = battle.length;
-		while (planesLeft > 1) {
+		while (planesLeft - nullCounter > 1) {
 			
 			for (Jet jets : battle) {
 				if (jets == null) {
@@ -218,6 +238,7 @@ public class JetsApp {
 				if (jets instanceof FighterJets) {
 					for (int i = 0; i < battle.length; i++) {
 						if (battle[i] == null) {
+							nullCounter ++;
 							continue;
 						}
 						if (battle[i] == jets) {
@@ -231,8 +252,9 @@ public class JetsApp {
 						} else {
 							System.out.println(jets.getModel() + " was unable to get a shot off.");
 						}
-						if (planesLeft == 1) {
+						if (planesLeft - battle.length - nullCounter== 1) {
 							System.out.println(jets.getModel() + " is the Top Starship.");
+							break;
 						}
 						
 					}
