@@ -135,7 +135,7 @@ public class JetsApp {
 						continue;
 					}
 				}
-				dogFight(hanger);
+				//dogFight(hanger);
 
 				System.out.println("What would you like to do next?");
 				displayMenu();
@@ -143,7 +143,7 @@ public class JetsApp {
 				sc.nextLine();
 			} else if (choice == 7) {
 				System.out.println(
-						"What kind of vessel are you looking to land?\n1.\"Trade Vessel\"\n2.Fighter\n3.Basic Boring Jet...");
+						"What kind of vessel are you looking to land?\n1.\"Trade Vessel\"\n2.Fighter\n3.Atmospheric Jet");
 				int planeType = sc.nextInt();
 				sc.nextLine();
 				if (planeType == 1) { // adding jets to the hanger
@@ -307,49 +307,49 @@ public class JetsApp {
 				+ "7. Add a jet to Fleet\n" + "8. Quit\n" + "9. Fly one Jet.\n10. List Pilots");
 	}
 
-	public static void dogFight(Starport starportCopy) {
-		Jet[] battle = starportCopy.getHanger();
-		int nullCounter = 0;
-		for (Jet jet : battle) {
-			if (jet == null) {
-				nullCounter++;
-			}
-		}
-		System.out.println(nullCounter);
-		int planesLeft = battle.length;
-		while (planesLeft - nullCounter > 1) {
-
-			for (Jet jets : battle) {
-				if (jets == null) {
-					continue;
-				}
-				if (jets instanceof FighterJets) {
-					for (int i = 0; i < battle.length; i++) {
-						if (battle[i] == null) {
-							nullCounter++;
-							continue;
-						}
-						if (battle[i] == jets) {
-							continue;
-						}
-						if (Math.random() > .5) {
-							System.out.println(jets.getModel() + " just shot down " + battle[i].getModel());
-
-							battle[i] = null;
-							planesLeft--;
-						} else {
-							System.out.println(jets.getModel() + " was unable to get a shot off.");
-						}
-						if (planesLeft - battle.length - nullCounter == 1) {
-							System.out.println(jets.getModel() + " is the Top Starship.");
-							break;
-						}
-
-					}
-				}
-			}
-		}
-
-	}
+//	public static void dogFight(Starport starportCopy) {
+//		Jet[] battle = starportCopy.getHanger();
+//		int nullCounter = 0;
+//		for (Jet jet : battle) {
+//			if (jet == null) {
+//				nullCounter++;
+//			}
+//		}
+//		System.out.println(nullCounter);
+//		int planesLeft = battle.length;
+//		while (planesLeft - nullCounter > 1) {
+//
+//			for (Jet jets : battle) {
+//				if (jets == null) {
+//					continue;
+//				}
+//				if (jets instanceof FighterJets) {
+//					for (int i = 0; i < battle.length; i++) {
+//						if (battle[i] == null) {
+//							nullCounter++;
+//							continue;
+//						}
+//						if (battle[i] == jets) {
+//							continue;
+//						}
+//						if (Math.random() > .5) {
+//							System.out.println(jets.getModel() + " just shot down " + battle[i].getModel());
+//
+//							battle[i] = null;
+//							planesLeft--;
+//						} else {
+//							System.out.println(jets.getModel() + " was unable to get a shot off.");
+//						}
+//						if (planesLeft - battle.length - nullCounter == 1) {
+//							System.out.println(jets.getModel() + " is the Top Starship.");
+//							break;
+//						}
+//
+//					}
+//				}
+//			}
+//		}
+//
+//	}
 
 }
