@@ -18,6 +18,10 @@ public abstract class Jet {
 	public void fly() {
 		System.out.println("The starship: " + model + ", Atmospheric Speed:" + speed + ", Galactic Flight Distance=" + range + ", Republic Credits=" + price + ". Can fly a distance of: " + range/speed + " Intergalactic Miles. " + "HyperSpace Speed: " + speed*.001303);
 	} //mach = miles per hour × 0.001303
+	protected double fly(double speed) {
+		System.out.println("TACOS");
+		return 1;
+	}
 
 	public String getModel() {
 		return model;

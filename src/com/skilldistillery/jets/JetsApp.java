@@ -15,7 +15,7 @@ public class JetsApp {
 		starport(); // run takes you to starport where the jets can be added.
 	}
 
-	private static void starport() {
+	private void starport() {
 		Scanner sc = new Scanner(System.in); // here we add the first 5 jets using add jet method.
 		Starport hanger = new Starport();
 
