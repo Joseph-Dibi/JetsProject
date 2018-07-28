@@ -7,7 +7,9 @@ The user is also able to interact with the cargo ships and fighters. These ships
 
 
 #### Topics and Technologies used
+
 	My program uses inheritance to have multiple classes that all share the Jet traits. This allows the different jets to be put into one large "Starport". Of those jets, the Fighter and Smuggler class both implement unique interfaces which allows them different methods than the basic jet properties.
 
 #### Lessons Learned
+
 	I was able to utilize arrays effectively to both add and retrieve objects. I expanded upon this with the use of instance of which allowed me to inspect the arrays for objects of a single specific type. I could then cast those objects to their own type and use their implemented methods.
